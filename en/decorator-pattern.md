@@ -40,36 +40,36 @@ Here's how you might implement this:
 ```
 // The original Car class
 class Car {
-constructor() {
-this.cost = 20000;
-this.description = 'Basic Car';
-}
+    constructor() {
+        this.cost = 20000;
+        this.description = 'Basic Car';
+    }
 
-getCost() {
-return this.cost;
-}
+    getCost() {
 
-getDescription() {
-return this.description;
-}
+    }
+
+    getDescription() {
+        return this.description;
+    }
 }
 
 // Decorator 1: Adding airbags to the car
 function withAirbags(car) {
-car.hasAirbags = true;
-const prevCost = car.getCost();
-car.getCost = () => prevCost + 5000; // Additional cost for airbags
-const prevDescription = car.getDescription();
-car.getDescription = () => prevDescription + ', with Airbags';
+    car.hasAirbags = true;
+    const prevCost = car.getCost();
+    car.getCost = () => prevCost + 5000; // Additional cost for airbags
+    const prevDescription = car.getDescription();
+    car.getDescription = () => prevDescription + ', with Airbags';
 }
 
 // Decorator 2: Adding an advanced navigation system to the car
 function withAdvancedNavigation(car) {
-car.hasAdvancedNavigation = true;
-const prevCost = car.getCost();
-car.getCost = () => prevCost + 3000; // Additional cost for advanced navigation
-const prevDescription = car.getDescription();
-car.getDescription = () => prevDescription + ', with Advanced Navigation';
+    car.hasAdvancedNavigation = true;
+    const prevCost = car.getCost();
+    car.getCost = () => prevCost + 3000; // Additional cost for advanced navigation
+    const prevDescription = car.getDescription();
+    car.getDescription = () => prevDescription + ', with Advanced Navigation';
 }
 
 // Usage
