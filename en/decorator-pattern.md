@@ -46,7 +46,7 @@ class Car {
     }
 
     getCost() {
-
+        return this.cost;
     }
 
     getDescription() {
